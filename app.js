@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 var galaxiesRouter = require('./routes/galaxies');
 var gridRouter = require('./routes/grid'); // Import the grid router
 var pickRouter = require('./routes/pick'); // Import the pick router for random item selection
-var searchResultsRouter = require('./routes/searchResults'); // Import the searchResults router
+var searchResultsRouter = require('./routes/searchresults'); // Import the searchResults router
 
 var app = express();
 
