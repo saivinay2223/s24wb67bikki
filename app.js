@@ -30,7 +30,7 @@ app.use('/users', usersRouter);        // Users route
 app.use('/galaxies', galaxiesRouter);  // Galaxies route
 app.use('/grid', gridRouter);          // Grid route
 app.use('/randomitem', pickRouter);    // Random item selection route
-app.use('/search-results', searchResultsRouter); // Search results route
+app.use('/searchresults', searchresultsRouter); // Search results route
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
