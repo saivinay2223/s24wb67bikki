@@ -7,9 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var galaxiesRouter = require('./routes/galaxies');
-var gridRouter = require('./routes/grid'); // Import the grid router
-var pickRouter = require('./routes/pick'); // Import the pick router for random item selection
-var searchResultsRouter = require('./routes/searchresults'); // Import the searchResults router
+var gridRouter = require('./routes/grid');
+var pickRouter = require('./routes/pick');
+const searchResultsRouter = require('./routes/searchResults'); // Import the searchResults router
 
 var app = express();
 
@@ -25,12 +25,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Route definitions
-app.use('/', indexRouter);            // Root route
-app.use('/users', usersRouter);        // Users route
-app.use('/galaxies', galaxiesRouter);  // Galaxies route
-app.use('/grid', gridRouter);          // Grid route
-app.use('/randomitem', pickRouter);    // Random item selection route
-app.use('/searchresults', searchresultsRouter); // Search results route
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/galaxies', galaxiesRouter);
+app.use('/grid', gridRouter);
+app.use('/randomitem', pickRouter);
+app.use('/searchResults', searchResultsRouter); // Search results route
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
