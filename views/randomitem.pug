@@ -1,16 +1,14 @@
-//- randomitem.pug
+
 doctype html
 html
   head
     title= title
   body
-    h1 Random Item Display
-    - for (let i = 0; i < 3; i++)
-      - const randomIndex = Math.floor(Math.random() * imageNames.length)
-      - const selectedImage = imageNames[randomIndex]
-      img(
-        src=`${selectedImage}`,
-        alt=`Random Image ${i+1}`,
-        height="300",
-        width="300"
-      )
+    h1 A Random Item
+
+    - var image_names = ["item1.jpg", "item2.jpg", "item3.jpg", "item4.jpg", "item5.jpg"];
+
+    each num in [1, 2, 3]
+      - var randomIndex = Math.floor(Math.random() * 5);
+      - var imageName = image_names[randomIndex];
+      img(src=`/images/${imageName}`, alt=`Random image ${num}`, height="300", width="300")

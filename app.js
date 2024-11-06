@@ -7,6 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var galaxiesRouter = require('./routes/galaxies');
+var gridRouter = require('./routes/grid'); // Import the grid router
+var pickRouter = require('./routes/pick'); // Import the pick router for random item selection
+
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -17,28 +20,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/galaxies', galaxiesRouter);
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-const gridRouter = require('./routes/grid'); // Import the grid router
-app.use('/grid', gridRouter); // Use it for the /grid endpoint
-
-const pickRouter = require('./routes/pick'); // Import the pick router
-app.use('/randomitem', pickRouter); // Use it for the /randomitem endpoint
-
-// catch 404 and forward to error handler
+app.use('/', indexRouter);            // Root route
+app.use('/users', usersRouter);        // Users route
+app.use('/galaxies', galaxiesRouter);  // Galaxies route
+app.use('/grid', gridRouter);          // Grid route
+app.use('/randomitem', pickRouter);    // Random item selection route
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+
   res.status(err.status || 500);
   res.render('error');
 });
