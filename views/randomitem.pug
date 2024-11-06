@@ -1,6 +1,16 @@
-extends layout
-
-block content
-  h1 Welcome to vinay's web pages
-  p This is a sample web page with an interactive button.
-  
+//- randomitem.pug
+doctype html
+html
+  head
+    title= title
+  body
+    h1 Random Item Display
+    - for (let i = 0; i < 3; i++)
+      - const randomIndex = Math.floor(Math.random() * imageNames.length)
+      - const selectedImage = imageNames[randomIndex]
+      img(
+        src=`${selectedImage}`,
+        alt=`Random Image ${i+1}`,
+        height="300",
+        width="300"
+      )
