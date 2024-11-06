@@ -21,13 +21,11 @@ app.use('/galaxies', galaxiesRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// Inside app.js
-app.get('/grid', (req, res) => {
-  let query = req.query;
-  console.log(`rows ${query.rows}`);
-  console.log(`cols ${query.cols}`);
-  res.render('grid', { title: "Make a grid", query: query });
-});
+const gridRouter = require('./routes/grid'); // Import the grid router
+app.use('/grid', gridRouter); // Use it for the /grid endpoint
+
+const pickRouter = require('./routes/pick'); // Import the pick router
+app.use('/randomitem', pickRouter); // Use it for the /randomitem endpoint
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
