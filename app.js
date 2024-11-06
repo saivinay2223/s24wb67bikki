@@ -9,7 +9,6 @@ var usersRouter = require('./routes/users');
 var galaxiesRouter = require('./routes/galaxies');
 var app = express();
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -21,6 +20,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/galaxies', galaxiesRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// Inside app.js
+app.get('/grid', (req, res) => {
+  let query = req.query;
+  console.log(`rows ${query.rows}`);
+  console.log(`cols ${query.cols}`);
+  res.render('grid', { title: "Make a grid", query: query });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
