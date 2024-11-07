@@ -7,3 +7,8 @@ hosted at <https://s24wb67bikki.onrender.com>
 - **distance**: (Number) Distance from Earth in light-years
 - **type**: (String) Type of galaxy (e.g., Spiral, Elliptical, Irregular)
 
+hosted at <https://s24wb67bikki.onrender.com/galaxies>
+
+hosted at <https://s24wb67bikki.onrender.com/searchresults>
+
+hosted at <https://s24wb67bikki.onrender.com/randomitems>
