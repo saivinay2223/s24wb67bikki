@@ -11,4 +11,6 @@ hosted at <https://s24wb67bikki.onrender.com/galaxies>
 
 hosted at <https://s24wb67bikki.onrender.com/searchresults>
 
-hosted at <https://s24wb67bikki.onrender.com/randomitems>
+hosted at <https://s24wb67bikki.onrender.com/randomitem>
+
+hosted at <https://s24wb67bikki.onrender.com/grid?rows=5&cols=6>
