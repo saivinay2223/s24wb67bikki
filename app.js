@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 var galaxiesRouter = require('./routes/galaxies');
 var gridRouter = require('./routes/grid');
 var pickRouter = require('./routes/pick');
-var searchResultsRouter = require('./routes/searchResults'); 
+var searchResultsRouter = require('./routes/searchresults'); 
 
 var app = express();
 
